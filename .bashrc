@@ -227,4 +227,5 @@ alias gc="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
 alias sleep="sudo pm-suspend"
+if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
 
