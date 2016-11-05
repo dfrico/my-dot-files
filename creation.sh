@@ -8,6 +8,9 @@ git clone https://github.com/iknite/.vim
 # NUMIX THEME
 sudo apt-add-repository ppa:numix/ppa
 sudo apt-get update 
-sudo apt-get install numix-icon-theme numix-icon-theme-circle
+sudo apt-get install numix-icon-theme numix-icon-theme-circle unity-tweak-tool zsh
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 
 
