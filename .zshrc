@@ -1,11 +1,14 @@
 # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
+  export HOMEBREW_INSTALL_BADGE="🍕"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+host="MBP"
+ZSH_THEME="dfr"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,19 +86,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias c='clear'                                                                                                         
-alias lsa="ls -a"                                                                                                        
-alias fuck="sudo"                                                                                                        
-alias ..="cd .."                                                                                                
-alias home="cd ~ && clear"                                                                                               
-alias lsd="ls -GFlash"                                                                    
-alias gi="git init"                                                                                                   
-alias gs="git status"                                                                                                  
-alias gits="git status"                                                                                                  
-alias gd="git diff"                                                                                                      
-alias ga="git add"                                                                                                  
-alias gc="git commit -m"                                                                                                 
-alias gps="git push"                                                                                                     
-alias gpl="git pull"                                                                                             
-alias sleep="sudo pm-suspend"
+alias c='clear'
+alias lsa="ls -a"
+alias ..="cd .."
+alias home="cd ~ && clear"
+alias lsd="ls -GFlash"
+alias gi="git init"
+alias gs="git status"
+alias gits="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit -m"
+alias gps="git push"
+alias gpl="git pull"
+alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
+alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
+alias simplehttp="python -m SimpleHTTPServer 8000"
+alias brewit='brew update && brew upgrade && brew cleanup; brew doctor'
+# alias sleep="sudo pm-suspend"
 
