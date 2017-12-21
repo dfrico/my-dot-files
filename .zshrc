@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
-  export HOMEBREW_INSTALL_BADGE="🍕"
+  export HOMEBREW_INSTALL_BADGE="✨"
+  export LC_ALL=en_US.UTF-8
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -57,6 +58,8 @@ plugins=(git)
 # User configuration
 
   export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/blayhem/bin:$HOME/bin:/Library/TeX/texbin"
+  export PKG_CONFIG_PATH=/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -93,7 +96,6 @@ alias home="cd ~ && clear"
 alias lsd="ls -GFlash"
 alias gi="git init"
 alias gs="git status"
-alias gits="git status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit -m"
@@ -104,4 +106,16 @@ alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d
 alias simplehttp="python -m SimpleHTTPServer 8000"
 alias brewit='brew update && brew upgrade && brew cleanup; brew doctor'
 # alias sleep="sudo pm-suspend"
+
+# tiny care terminal
+export TTC_APIKEYS="false"
+export TTC_WEATHER="Madrid"
+export TTC_REPOS="~/Github/"
+export TTC_REPOS_DEPTH=2
+
+# Jupyter
+export JUPYTER_URL_PATH="http://localhost:8888/"
+alias jd='PWDPATH=`pwd`;open $JUPYTER_URL_PATH"tree${PWDPATH/#$HOME}"'
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
