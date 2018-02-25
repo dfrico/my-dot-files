@@ -9,7 +9,8 @@
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
 host="MBP"
-ZSH_THEME="dfr"
+# ZSH_THEME="dfr"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,7 +54,7 @@ ZSH_THEME="dfr"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git osx zsh-autosuggestions)
 
 # User configuration
 
@@ -106,6 +107,9 @@ alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d
 alias simplehttp="python -m SimpleHTTPServer 8000"
 alias brewit='brew update && brew upgrade && brew cleanup; brew doctor'
 # alias sleep="sudo pm-suspend"
+alias status="spotify status"
+alias playlist="spotify play list"
+alias playuri="spotify play uri"
 
 # tiny care terminal
 export TTC_APIKEYS="false"
@@ -116,6 +120,13 @@ export TTC_REPOS_DEPTH=2
 # Jupyter
 export JUPYTER_URL_PATH="http://localhost:8888/"
 alias jd='PWDPATH=`pwd`;open $JUPYTER_URL_PATH"tree${PWDPATH/#$HOME}"'
+
+# Golang
+
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
