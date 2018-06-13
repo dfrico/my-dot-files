@@ -58,7 +58,7 @@ plugins=(git osx zsh-autosuggestions)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/blayhem/bin:$HOME/bin:/Library/TeX/texbin"
+  export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/bin:/Library/TeX/texbin:$HOME/.cargo/bin"
   export PKG_CONFIG_PATH=/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -91,6 +91,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias c='clear'
+alias ls="exa"
 alias lsa="ls -a"
 alias ..="cd .."
 alias home="cd ~ && clear"
