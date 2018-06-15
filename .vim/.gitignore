@@ -1,8 +1,0 @@
-.DS_Store
-*.swp
-*.swo
-.netrwhist
-bundle/*
-!bundle/vundle
-undo/*
-!undo/ABOUT.md
