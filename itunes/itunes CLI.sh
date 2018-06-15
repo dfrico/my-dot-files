@@ -46,7 +46,8 @@ while [ $# -gt 0 ]; do
             if [ $state = "playing" ]; then
                 artist=`osascript -e 'tell application "iTunes" to artist of current track as string'`;
                 track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
-                echo -e "Current track: \n\n${bold}$artist –  $track${normal}";
+                album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
+		echo -e "Currently playing: \n\n${bold}$track\n$artist (💿  $album)${normal}";
 	    else
                 echo "iTunes is currently $state.";
             fi
