@@ -1,0 +1,3 @@
+[submodule ".vim/bundle/vim-airline-clock"]
+	path = .vim/bundle/vim-airline-clock
+	url = https://github.com/enricobacis/vim-airline-clock
