@@ -1,5 +1,6 @@
 syntax on
 colorscheme onedark
+let g:airline_theme='onedark'
 "set background=dark
 
 set nocompatible              " be iMproved, required
@@ -16,6 +17,8 @@ Plugin 'VundleVim/Vundle.vim'
 " added nerdtree
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'enricobacis/vim-airline-clock'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
