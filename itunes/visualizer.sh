@@ -21,9 +21,6 @@ else
     echo "iTunes is currently $state.";
 fi
 
-: '
-# OPTION 1: run applescript here and save img in desktop
-
 art=$(cat <<- EOS
 tell application "iTunes" to tell artwork 1 of current track
     set srcBytes to raw data
@@ -34,11 +31,7 @@ tell application "iTunes" to tell artwork 1 of current track
     end if
 end tell
 
-log (do shell script "pwd" as text)
-
-set fileName to (((path to desktop) as text) & "_cover" & ext)
--- set fileName to ((do shell script "pwd" as text) & "itunes_cover" & ext)
-log fileName
+set fileName to (((path to temporary items) as text) & "itunes_cover" & ext)
 set outFile to open for access file fileName with write permission
 set eof outFile to 0
 write srcBytes to outFile
@@ -46,14 +39,7 @@ close access outFile
 EOS
 )
 
-# OPTION 2: running art.scpt script and saving img in $HOME/bin
-# OPTION 3: passing buffer to imgcat ?
-'
+osascript -e "$art"
 
-dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-osascript "$dir/art.scpt"
-# osascript -e "$art"
-
-imgcat $dir/art.scpt_cover.{jpg,png} -w $size
-rm -f $dir/art.scpt_cover.{jpg,png}
+imgcat $TMPDIR/TemporaryItems/itunes_cover.{jpg,png} -w $size
+rm -f $TMPDIR/TemporaryItems/itunes_cover.{jpg,png}
