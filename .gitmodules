@@ -1,3 +1,12 @@
 [submodule ".vim/bundle/vim-airline-clock"]
 	path = .vim/bundle/vim-airline-clock
 	url = https://github.com/enricobacis/vim-airline-clock
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim
