@@ -198,27 +198,12 @@ function fplay {
     fi
 }
 
-function uni {
-	if [ "$1" == "AI" ]; then
-		cd ~/Dropbox/Universidad/3ºComp\ Science\ 15-16/2o\ cuatrim/Artificial\ Intelligence/
-	elif [ "$1" == "OS" ]; then
-		cd ~/Dropbox/Universidad/3ºComp\ Science\ 15-16/2o\ cuatrim/Operating\ Systems/
-	elif [ "$1" == "FDB" ]; then
-		cd ~/Dropbox/Universidad/3ºComp\ Science\ 15-16/2o\ cuatrim/FDB2/
-	else
-		cd ~/Dropbox/Universidad/3ºComp\ Science\ 15-16/2o\ cuatrim/
-	fi
-}
-
-
 alias c='clear'
 alias lsa="ls -a"
 alias fuck="sudo"
 alias ..="cd .."
 alias home="cd ~ && clear"
 alias lsd="ls -GFlash"
-alias guernika="ssh a0303645@guernika.lab.inf.uc3m.es"
-alias aig="ssh 100303645@linux.aig.uc3m.es"
 alias gi="git init"
 alias gits="git status"
 alias gd="git diff"
