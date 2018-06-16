@@ -16,7 +16,7 @@ if [ $state = "playing" ]; then
     artist=`osascript -e 'tell application "iTunes" to artist of current track as string'`;
     track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
     album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
-    echo "Currently playing: \n\n${bold}$track\n$artist (💿  $album)${normal}";
+    echo -e "Currently playing: \n\n${bold}$track\n$artist (💿  $album)${normal}";
 else
     echo "iTunes is currently $state.";
 fi
@@ -50,7 +50,10 @@ EOS
 # OPTION 3: passing buffer to imgcat ?
 '
 
-osascript art.scpt
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+osascript "$dir/art.scpt"
 # osascript -e "$art"
-imgcat *_cover.* -w $size
-rm -f art.scpt_cover.{jpg,png}
+
+imgcat $dir/art.scpt_cover.{jpg,png} -w $size
+rm -f $dir/art.scpt_cover.{jpg,png}
