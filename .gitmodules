@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/Vundle.vim"]
 	path = .vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim
+[submodule ".vim/bundle/colorizer"]
+	path = .vim/bundle/colorizer
+	url = https://github.com/lilydjwg/colorizer
