@@ -41,5 +41,10 @@ EOS
 
 osascript -e "$art"
 
-imgcat $TMPDIR/TemporaryItems/itunes_cover.{jpg,png} -w $size
+if [ "$TERM" == "xterm-kitty" ]
+    then
+        kitty icat $TMPDIR/TemporaryItems/itunes_cover.jpg
+    else
+        imgcat $TMPDIR/TemporaryItems/itunes_cover.{jpg,png} -w $size
+fi
 rm -f $TMPDIR/TemporaryItems/itunes_cover.{jpg,png}
