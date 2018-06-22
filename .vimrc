@@ -22,11 +22,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" added nerdtree
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'junegunn/goyo.vim'
 Plugin 'vim-airline/vim-airline'
-Plugin 'enricobacis/vim-airline-clock'
+" Plugin 'enricobacis/vim-airline-clock'
 Plugin 'lilydjwg/colorizer'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
