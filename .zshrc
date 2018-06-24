@@ -109,10 +109,12 @@ alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -
 alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
 alias simplehttp="python -m SimpleHTTPServer 8000"
 alias brewit='brew update && brew upgrade && brew cleanup; brew doctor'
-# alias sleep="sudo pm-suspend"
 alias status="spotify status"
 alias playlist="spotify play list"
 alias playuri="spotify play uri"
+
+# sudo gem install iStats
+alias temp="istats cpu temp"
 
 # tiny care terminal
 export TTC_APIKEYS="false"

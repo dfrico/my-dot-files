@@ -43,7 +43,7 @@ osascript -e "$art"
 
 if [ "$TERM" == "xterm-kitty" ]
     then
-        kitty icat $TMPDIR/TemporaryItems/itunes_cover.jpg
+        kitty icat --align=left $TMPDIR/TemporaryItems/itunes_cover.jpg
     else
         imgcat $TMPDIR/TemporaryItems/itunes_cover.{jpg,png} -w $size
 fi
