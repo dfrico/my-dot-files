@@ -34,3 +34,4 @@ filetype plugin indent on    " required
 "filetype plugin on
 
 map <C-n> :NERDTreeToggle<CR>
+map <C-g> :Goyo<CR>
