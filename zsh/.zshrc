@@ -144,7 +144,7 @@ alias temp="istats cpu temp"
 # tiny care terminal
 export TTC_APIKEYS="false"
 export TTC_WEATHER="Madrid"
-export TTC_REPOS="/Users/blayhem/Github/"
+export TTC_REPOS="/Users/daniel/Github/"
 export TTC_REPOS_DEPTH=2
 
 # Jupyter
