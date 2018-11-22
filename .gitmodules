@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/goyo.vim"]
 	path = .vim/bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
