@@ -18,4 +18,5 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/z
 # ADD THIS TO .ZSHRC PLUGINS:
 # plugins=(zsh-autosuggestions)
 
+pip3 install rtv haxor-news
 
