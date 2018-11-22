@@ -1,24 +1,18 @@
-[submodule ".vim/bundle/vim-airline-clock"]
-	path = vim/.vim/bundle/vim-airline-clock
-	url = https://github.com/enricobacis/vim-airline-clock
-[submodule ".vim/bundle/nerdtree"]
+[submodule "vim/.vim/bundle/Vundle.vim"]
+	path = vim/.vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "vim/.vim/bundle/nerdtree"]
 	path = vim/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule ".vim/bundle/vim-airline"]
-	path = vim/.vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule ".vim/bundle/Vundle.vim"]
-	path = vim/.vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim
-[submodule ".vim/bundle/colorizer"]
+[submodule "vim/.vim/bundle/colorizer"]
 	path = vim/.vim/bundle/colorizer
 	url = https://github.com/lilydjwg/colorizer
-[submodule ".vim/bundle/goyo.vim"]
+[submodule "vim/.vim/bundle/goyo.vim"]
 	path = vim/.vim/bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
-[submodule ".vim/bundle/syntastic"]
-	path = vim/.vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "vim/.vim/bundle/syntastic"]
 	path = vim/.vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "vim/.vim/bundle/vim-airline"]
+	path = vim/.vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
