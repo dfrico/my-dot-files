@@ -40,6 +40,8 @@ cd fonts
 cd ..
 rm -rf fonts
 
+brew tap caskroom/fonts && brew cask install font-iosevka
+
 # pip apps
 if hash rtv 2>/dev/null; then
     echo "Pip apps already installed"
