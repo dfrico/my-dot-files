@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Volumes/EFI/EFI/CLOVER'
-let g:netrw_dirhist_2='/Users/blayhem/Github/my-dot-files/.vim/bundle/Vundle.vim'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/blayhem/Code/gfw/app/javascript'
+let g:netrw_dirhist_2='/Users/blayhem/Code/gfw/app'
+let g:netrw_dirhist_3='/Users/blayhem/Code/gfw'
+let g:netrw_dirhist_4='/Users/blayhem/Code'

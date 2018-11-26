@@ -37,6 +37,12 @@ filetype plugin indent on    " required
 map <C-n> :NERDTreeToggle<CR>
 map <C-g> :Goyo<CR>
 
+" Splits
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 " Linter stuff
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
