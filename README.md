@@ -1,4 +1,4 @@
-# My dotfiles and stuff
+# My dotfiles and stuff.
 
 ```git clone --recursive -j8 git@github.com:blayhem/my-dot-files.git```
 
