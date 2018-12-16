@@ -93,5 +93,4 @@ brew 'zsh'
 
 # Cask Apps
 cask 'amethyst'
-cask 'font-iosevka'
 

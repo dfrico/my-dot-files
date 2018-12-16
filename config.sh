@@ -17,7 +17,7 @@ if [ "$ZSH_CUSTOM" == "" ]; then
 fi
 
 # zsh plugins
-if [ "$0" == "zsh" ]; then
+if [ "$0" == *"zsh" ]; then
     echo "Installing plugins to" $ZSH_CUSTOM
     # https://github.com/denysdovhan/spaceship-prompt/
     git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
@@ -33,6 +33,7 @@ else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
+brew tap caskroom/fonts && brew cask install font-iosevka
 # https://github.com/powerline/fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
