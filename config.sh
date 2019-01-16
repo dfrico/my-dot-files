@@ -28,6 +28,7 @@ if [ "$0" == *"zsh" ]; then
 
     # https://github.com/zsh-users/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    git clone https://github.com/iam4x/zsh-iterm-touchbar.git ${ZSH_CUSTOM1:-$ZSH/custom}/plugins/zsh-iterm-touchbar
 else
     # oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
