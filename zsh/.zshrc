@@ -71,11 +71,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+  if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+  else
+    export EDITOR='nvim'
+  fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -128,7 +128,7 @@ alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit -m"
-alias gps="git push"
+alias gps="git push && gosleap"
 alias gpl="git pull"
 alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
@@ -137,6 +137,7 @@ alias brewit='brew update && brew upgrade && brew cleanup; brew doctor'
 alias status="spotify status"
 alias playlist="spotify play list"
 alias playuri="spotify play uri"
+alias vim="nvim"
 
 # sudo gem install iStats
 alias temp="istats cpu temp"
@@ -144,7 +145,7 @@ alias temp="istats cpu temp"
 # tiny care terminal
 export TTC_APIKEYS="false"
 export TTC_WEATHER="Madrid"
-export TTC_REPOS="/Users/blayhem/Github/"
+export TTC_REPOS="/Users/blayhem/Github, /Users/blayhem/Code/"
 export TTC_REPOS_DEPTH=2
 
 # Jupyter
