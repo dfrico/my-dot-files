@@ -25,3 +25,6 @@
 [submodule "vim/.vim/bundle/emmet-vim"]
 	path = vim/.vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "ranger/.config/ranger/colorschemes"]
+	path = ranger/.config/ranger/colorschemes
+	url = https://github.com/ranger/ranger
