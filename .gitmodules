@@ -27,4 +27,4 @@
 	url = https://github.com/mattn/emmet-vim
 [submodule "ranger/.config/ranger/colorschemes"]
 	path = ranger/.config/ranger/colorschemes
-	url = https://github.com/ranger/ranger
+	url = https://github.com/ranger/colorschemes
