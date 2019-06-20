@@ -30,8 +30,8 @@
     },
     "editor.tabSize": 2,
     "editor.renderWhitespace": "none",
-    // "editor.fontFamily": "'Dank Mono'",
-    "editor.fontFamily": "'Operator Mono Lig'",
+    "editor.fontFamily": "'Dank Mono'",
+    // "editor.fontFamily": "'Operator Mono'",
     // , 'Fira Code', Menlo, Monaco, 'Courier New', monospace"
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
