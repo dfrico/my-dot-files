@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "One Dark Pro Vivid",
+    "workbench.colorTheme": "Palenight Operator",
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": true,
     "window.zoomLevel": 0,
@@ -14,6 +14,18 @@
             "activityBar.background": "#0D0D0D",
             "statusBar.background": "#111",
             "editorGroupHeader.tabsBackground": "#252525"
+        },
+        "[Palenight Operator]": {
+            "sideBar.background": "#111",
+            "editor.background": "#161616",
+            "editor.lineHighlightBackground": "#222",
+            "tab.activeBackground": "#252525",
+            "tab.inactiveBackground": "#1E1E1E",
+            "activityBar.background": "#0D0D0D",
+            "statusBar.background": "#111",
+            "editorGroupHeader.tabsBackground": "#252525",
+            "scrollbarSlider.background": "#252525",
+            "scrollbarSlider.hoverBackground": "#444"
         }
     },
     "editor.tabSize": 2,
@@ -29,5 +41,7 @@
     "editor.rulers": [
         140
     ],
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.startupEditor": "newUntitledFile"
 }

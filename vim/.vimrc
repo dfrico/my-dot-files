@@ -64,3 +64,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 let g:user_emmet_leader_key=','
+
+" Code folding
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
