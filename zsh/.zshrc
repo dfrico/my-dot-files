@@ -170,3 +170,5 @@ export PATH=$PATH:$GOROOT/bin
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rvm/bin"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+command -v lolcat >/dev/null 2>&1 && fortune | lolcat || fortune
