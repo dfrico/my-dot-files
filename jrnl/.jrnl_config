@@ -1,0 +1,13 @@
+{
+  "journals": {
+    "default": "/Users/blayhem/Documents/journal.txt"
+  },
+  "editor": "nvim -c Goyo -c startinsert",
+  "encrypt": true,
+  "default_hour": 9,
+  "default_minute": 0,
+  "timeformat": "%Y-%m-%d %H:%M",
+  "tagsymbols": "@",
+  "highlight": true,
+  "linewrap": 79
+}
