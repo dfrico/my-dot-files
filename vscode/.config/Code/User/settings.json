@@ -43,5 +43,6 @@
     ],
     "workbench.iconTheme": "material-icon-theme",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.visible": false
 }

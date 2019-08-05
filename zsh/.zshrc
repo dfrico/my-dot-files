@@ -2,6 +2,8 @@
   export ZSH=$HOME/.oh-my-zsh
   export HOMEBREW_INSTALL_BADGE="✨"
   export LC_ALL=en_US.UTF-8
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude node_modules --exclude .git'
+  export FZF_DEFAULT_OPTS="--height=40 --layout=reverse --border --preview='coderay {}'" # sudo gem install coderay
 
 eval $(thefuck --alias)
 

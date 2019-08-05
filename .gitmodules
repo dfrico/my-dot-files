@@ -28,3 +28,6 @@
 [submodule "ranger/.config/ranger/colorschemes"]
 	path = ranger/.config/ranger/colorschemes
 	url = https://github.com/ranger/colorschemes
+[submodule "vim/.vim/bundle/rust.vim"]
+	path = vim/.vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim
