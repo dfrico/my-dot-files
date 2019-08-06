@@ -15,6 +15,7 @@ eval $(thefuck --alias)
 host="MBP"
 # ZSH_THEME="dfr"
 ZSH_THEME="spaceship"
+ZSH_DISABLE_COMPFIX=true
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
