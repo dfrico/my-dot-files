@@ -1,7 +1,15 @@
 syntax on
+
+let g:onedark_color_overrides = {
+\ "black": {"gui": "#161616", "cterm": "NONE", "cterm16": "0" }
+\}
+
+" https://github.com/joshdick/onedark.vim
+" needs colors/onedark.vim in ~/.vim/colors/ directory
+" and autoload/onedark.vim in ~/.vim/autoload/ directory
 colorscheme onedark
 let g:airline_theme='onedark'
-"set background=dark
+" set background=dark
 filetype plugin indent on
 " show existing tab with 2 spaces width
 set tabstop=2
@@ -26,6 +34,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-airline/vim-airline'
 " Plugin 'enricobacis/vim-airline-clock'
+Plugin 'joshdick/onedark.vim'
 Plugin 'lilydjwg/colorizer'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
