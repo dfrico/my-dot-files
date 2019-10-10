@@ -45,10 +45,10 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
     "[javascript]": {
-        "editor.defaultFormatter": "mblode.pretty-formatter"
+        // "editor.defaultFormatter": "mblode.pretty-formatter"
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    },,
+    },
     "editor.fontSize": 14
 }
