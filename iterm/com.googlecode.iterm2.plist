@@ -17,8 +17,7 @@
 	<key>ConvertDosNewlines</key>
 	<true/>
 	<key>Coprocess MRU</key>
-	<array>
-	</array>
+	<integer>0</integer>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Material</key>
@@ -1996,7 +1995,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>39 221 1016 512 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 900 </string>
+	<string>360 230 720 440 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>360 230 720 440 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3562,13 +3561,13 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.0</string>
+		<string>3.3.4</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
+		<string>3.3.0</string>
 		<string>3.2.9</string>
 		<string>3.3.2</string>
-		<string>3.3.4</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -3590,7 +3589,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>916173A5-EF8F-4B5F-A1C6-DA6C3D913282</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>86</integer>
+	<integer>87</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
