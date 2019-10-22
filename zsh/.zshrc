@@ -148,6 +148,17 @@ alias vim="nvim"
 # sudo gem install iStats
 alias temp="istats cpu temp"
 
+function hideDesktop {
+  if [ "$1" = true ] ; then
+    echo "Hiding desktop"
+    defaults write com.apple.finder CreateDesktop false
+  elif [ "$1" = false ] ; then
+    echo "Showing desktop"
+    defaults write com.apple.finder CreateDesktop true
+  fi
+  killall Finder
+}
+
 # tiny care terminal
 export TTC_APIKEYS="false"
 export TTC_WEATHER="Madrid"

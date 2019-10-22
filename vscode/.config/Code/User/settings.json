@@ -46,6 +46,7 @@
     "workbench.statusBar.visible": true,
     "[javascript]": {
         // "editor.defaultFormatter": "mblode.pretty-formatter"
+        // "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
