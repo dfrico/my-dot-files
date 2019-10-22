@@ -27,7 +27,8 @@
 	url = https://github.com/mattn/emmet-vim
 [submodule "ranger/.config/ranger/colorschemes"]
 	path = ranger/.config/ranger/colorschemes
-	url = https://github.com/ranger/colorschemes
+  url = https://github.com/ranger/colorschemes
+  ignore = untracked
 [submodule "vim/.vim/bundle/rust.vim"]
 	path = vim/.vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
