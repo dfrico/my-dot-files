@@ -14,7 +14,7 @@ eval $(thefuck --alias)
 # ZSH_THEME="robbyrussell"
 host="MBP"
 # ZSH_THEME="dfr"
-ZSH_THEME="spaceship"
+ZSH_THEME="dfr"
 ZSH_DISABLE_COMPFIX=true
 
 # Uncomment the following line to use case-sensitive completion.
@@ -59,7 +59,7 @@ ZSH_DISABLE_COMPFIX=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx zsh-autosuggestions zsh-iterm-touchbar)
+plugins=(git osx zsh-autosuggestions)
 
 # User configuration
 
@@ -96,8 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
-
+# . "/usr/local/opt/nvm/nvm.sh"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -176,7 +175,7 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+# [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
