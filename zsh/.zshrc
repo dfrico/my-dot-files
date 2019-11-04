@@ -63,7 +63,7 @@ plugins=(git osx zsh-autosuggestions)
 
 # User configuration
 
-  export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/bin:/Library/TeX/texbin:$HOME/.cargo/bin:$HOME/Library/Python/3.7/bin"
+  export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/bin:/Library/TeX/texbin:$HOME/.cargo/bin:$HOME/Library/Python/3.7/bin:$HOME/.gem/ruby/2.6.0/bin"
   export PKG_CONFIG_PATH=/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -133,7 +133,7 @@ alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit -m"
-alias gps="git push && gosleap"
+alias gps="git push"
 alias gpl="git pull"
 alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
