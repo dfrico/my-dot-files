@@ -35,3 +35,6 @@
 [submodule "vim/.vim/bundle/onedark.vim"]
 	path = vim/.vim/bundle/onedark.vim
 	url = https://github.com/joshdick/onedark.vim
+[submodule "vim/.vim/bundle/vim-startify"]
+	path = vim/.vim/bundle/vim-startify
+	url = https://github.com/mhinz/vim-startify

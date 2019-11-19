@@ -40,7 +40,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'grep.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'rust-lang/rust.vim'
+" Plugin 'rust-lang/rust.vim'
+Plugin 'mhinz/vim-startify'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -83,3 +84,30 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+
+let g:ascii = [
+      \ '                                           ,o88888',
+      \ '                                        ,o8888888*',
+      \ '                  ,:o:o:oooo.        ,8O88Pd8888"',
+      \ '              ,.::.::o:ooooOoOoO. ,oO8O8Pd888*"',
+      \ '            ,.:.::o:ooOoOoOO8O8OOo.8OOPd8O8O"',
+      \ '           , ..:.::o:ooOoOOOO8OOOOo.FdO8O8"',
+      \ '          , ..:.::o:ooOoOO8O888O8O,COCOO"',
+      \ '         , . ..:.::o:ooOoOOOO8OOOOCOCO"',
+      \ '          . ..:.::o:ooOoOoOO8O8OCCCC"o',
+      \ '             . ..:.::o:ooooOoCoCCC"o:o',
+      \ '             . ..:.::o:o:,cooooCo"oo:o:',
+      \ '          `   . . ..:.:cocoooo"*o:o:::*',
+      \ '          .`   . ..::ccccoc"*o:o:o:::*',
+      \ '         :.:.    ,c:cccc"*:.:.:.:.:.*',
+      \ '       ..:.:"*`::::c:"*..:.:.:.:.:.*',
+      \ '     ...:.*.:.::::"*    . . . . .*',
+      \ '    .. . ....:."* `   .  . . **',
+      \ '  . . . ...."*',
+      \ '  .. . ."*',
+      \ ' .',
+      \ ''
+      \]
+
+let g:startify_custom_header = startify#pad(g:ascii + split(system('fortune ~/my-dot-files/fortune/ror'), '\n'))
