@@ -8,7 +8,7 @@ let g:onedark_color_overrides = {
 " needs colors/onedark.vim in ~/.vim/colors/ directory
 " and autoload/onedark.vim in ~/.vim/autoload/ directory
 colorscheme onedark
-let g:airline_theme='onedark'
+" let g:airline_theme='onedark'
 " set background=dark
 filetype plugin indent on
 " show existing tab with 2 spaces width
@@ -69,7 +69,7 @@ set splitbelow
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set shell=/usr/local/bin/zsh
+set shell=/usr/bin/zsh
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -110,4 +110,4 @@ let g:ascii = [
       \ ''
       \]
 
-let g:startify_custom_header = startify#pad(g:ascii + split(system('fortune ~/my-dot-files/fortune/ror'), '\n'))
+let g:startify_custom_header = startify#pad(g:ascii + split(system('fortune ror'), '\n'))

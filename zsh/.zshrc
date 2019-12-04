@@ -12,7 +12,7 @@ eval $(thefuck --alias)
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-host="MBP"
+host="void"
 # ZSH_THEME="dfr"
 ZSH_THEME="dfr"
 ZSH_DISABLE_COMPFIX=true
@@ -188,3 +188,6 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rvm/bin"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 command -v lolcat >/dev/null 2>&1 && fortune | lolcat || fortune
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
