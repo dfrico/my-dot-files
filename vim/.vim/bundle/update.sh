@@ -1,1 +1,3 @@
-for d in ./*/ ; do (cd "$d" && gco master && gpl); done
+#!/bin/sh
+
+for d in ./*/ ; do (cd "$d" && git checkout master && git pull); done
