@@ -62,12 +62,10 @@ ZSH_DISABLE_COMPFIX=true
 plugins=(git osx zsh-autosuggestions zsh-iterm-touchbar)
 
 # User configuration
-
   export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/bin:/Library/TeX/texbin:$HOME/.cargo/bin:$HOME/Library/Python/3.7/bin"
   export PKG_CONFIG_PATH=/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -95,13 +93,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# place this after nvm initialization!
+# this goes after nvm initialization!
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -170,18 +169,31 @@ export JUPYTER_URL_PATH="http://localhost:8888/"
 alias jd='PWDPATH=`pwd`;open $JUPYTER_URL_PATH"tree${PWDPATH/#$HOME}"'
 
 # Golang
-
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+# imagemagick@6 is keg-only, which means it was not symlinked into /usr/local,
+# because this is an alternate version of another formula.
+#
+# If you need to have imagemagick@6 first in your PATH run:
+#   echo 'export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"' >> ~/.zshrc
+#
+# For compilers to find imagemagick@6 you may need to set:
+#   export LDFLAGS="-L/usr/local/opt/imagemagick@6/lib"
+#   export CPPFLAGS="-I/usr/local/opt/imagemagick@6/include"
+#
+# For pkg-config to find imagemagick@6 you may need to set:
+#   export PKG_CONFIG_PATH="/usr/local/opt/imagemagick@6/lib/pkgconfig"
+#
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rvm/bin"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 [ "$(uname)" = "Darwin" ] && [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rvm/bin"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
