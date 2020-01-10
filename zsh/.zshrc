@@ -143,6 +143,7 @@ alias status="spotify status"
 alias playlist="spotify play list"
 alias playuri="spotify play uri"
 alias vim="nvim"
+alias search="grep -Rw"
 
 # sudo gem install iStats
 alias temp="istats cpu temp"
