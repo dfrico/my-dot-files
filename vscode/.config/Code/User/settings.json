@@ -1,21 +1,11 @@
 {
-    "workbench.colorTheme": "Palenight Operator",
+    "workbench.colorTheme": "Palenight Italic",
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": true,
     "window.zoomLevel": 0,
     // "editor.formatOnSave": true,
     "workbench.colorCustomizations": {
-        "[One Dark Pro Vivid]": {
-            "sideBar.background": "#111",
-            "editor.background": "#161616",
-            "editor.lineHighlightBackground": "#222",
-            "tab.activeBackground": "#252525",
-            "tab.inactiveBackground": "#1E1E1E",
-            "activityBar.background": "#0D0D0D",
-            "statusBar.background": "#111",
-            "editorGroupHeader.tabsBackground": "#252525"
-        },
-        "[Palenight Operator]": {
+        /* "[Palenight Operator]": {
             "sideBar.background": "#111",
             "editor.background": "#161616",
             "editor.lineHighlightBackground": "#222",
@@ -26,7 +16,7 @@
             "editorGroupHeader.tabsBackground": "#252525",
             "scrollbarSlider.background": "#252525",
             "scrollbarSlider.hoverBackground": "#444"
-        }
+        } */
     },
     "editor.tabSize": 2,
     "editor.renderWhitespace": "none",
@@ -45,11 +35,16 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
     "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
         // "editor.defaultFormatter": "mblode.pretty-formatter"
         // "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "editor.fontSize": 14
+    "editor.fontSize": 14,
+    "terminal.integrated.rendererType": "dom",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
