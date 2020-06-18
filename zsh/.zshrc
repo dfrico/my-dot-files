@@ -5,7 +5,7 @@
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude node_modules --exclude .git'
   export FZF_DEFAULT_OPTS="--height=40 --layout=reverse --border --preview='coderay {}'" # sudo gem install coderay
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -178,7 +178,11 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# autojump
 # [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+[[ -s /home/blayhem/.autojump/etc/profile.d/autojump.sh ]] && source /home/blayhem/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
 
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
