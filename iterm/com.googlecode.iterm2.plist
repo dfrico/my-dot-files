@@ -6,6 +6,8 @@
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -17,8 +19,7 @@
 	<key>ConvertDosNewlines</key>
 	<true/>
 	<key>Coprocess MRU</key>
-	<array>
-	</array>
+	<array/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Material</key>
@@ -1935,7 +1936,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Downloads</string>
+	<string>~/Desktop</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<true/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -1986,11 +1987,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>840 33 445 77 0 0 1440 900 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>263 1644 799 448 0 0 1440 900 </string>
+	<string>320 339 799 448 0 0 1440 900 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>520 578 400 129 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>730 450 700 450 0 0 1440 900 </string>
+	<string>370 337 700 450 0 0 1440 900 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 194 609 401 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -1998,7 +1999,7 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>725 20 692 860 0 0 1440 900 </string>
+	<string>311 110 580 543 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 0 580 520 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2770,7 +2771,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.20260350571065991</real>
+			<real>0.21786167512690355</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -3562,12 +3563,15 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.2</string>
+		<string>3.3.8</string>
+		<string>3.2.9</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
+		<string>3.3.7</string>
+		<string>3.3.9</string>
 		<string>3.3.0</string>
-		<string>3.2.9</string>
+		<string>3.3.2</string>
 		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
@@ -3586,7 +3590,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{374, 842}</string>
+		<string>{373, 843}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -3595,7 +3599,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>916173A5-EF8F-4B5F-A1C6-DA6C3D913282</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>112</integer>
+	<integer>218</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4336,12 +4340,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>shell</string>
-		<string>Sankey</string>
-		<string>entries</string>
-	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>564614744.60230696</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -4406,9 +4404,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-04T17:42:09Z</date>
+	<date>2020-02-17T18:02:25Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>2513810755</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>Secure Input</key>
@@ -4450,7 +4450,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.6</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
