@@ -14,7 +14,7 @@
 # ZSH_THEME="robbyrussell"
 host="void"
 # ZSH_THEME="dfr"
-ZSH_THEME="dfr"
+ZSH_THEME="spaceship"
 ZSH_DISABLE_COMPFIX=true
 
 # Uncomment the following line to use case-sensitive completion.
