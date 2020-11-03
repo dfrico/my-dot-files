@@ -1,0 +1,15 @@
+- stow dotfiles
+- neovim config
+- vscode config
+- term config
+  - zsh + ohmyzsh
+  - dotfiles
+  - keybindings?
+- firefox & chrome setup (settings, themes...)
+- spotify
+- telegram
+- electron apps
+  - slack
+  - postman
+  - gitkraken?
+  - figma
