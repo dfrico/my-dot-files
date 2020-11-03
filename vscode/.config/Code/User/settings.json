@@ -25,6 +25,9 @@
     // , 'Fira Code', Menlo, Monaco, 'Courier New', monospace"
     "editor.fontLigatures": true,
     "editor.fontWeight": "400",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
     "terminal.integrated.fontFamily": "Iosevka Term",
     "terminal.integrated.fontSize": 14,
     "editor.rulers": [
@@ -46,5 +49,14 @@
     "terminal.integrated.rendererType": "dom",
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "glassit.alpha": 240,
+    "git.autofetch": true,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
