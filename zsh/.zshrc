@@ -37,10 +37,6 @@ _fzf_git_log() {
     fi
 }
 
-# Some ruby trash that has to go on top.
-# export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin"
-# eval "$(rbenv init -)"
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 host="MBP"
