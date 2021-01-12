@@ -1,20 +1,18 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
-  export HOMEBREW_INSTALL_BADGE="✨"
-  export LC_ALL=en_US.UTF-8
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude node_modules --exclude .git'
-  export FZF_DEFAULT_OPTS="--height=40 --layout=reverse --border --preview='coderay {}'" # sudo gem install coderay
+export ZSH=$HOME/.oh-my-zsh
+export HOMEBREW_INSTALL_BADGE="✨"
+export LC_ALL=en_US.UTF-8
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude node_modules --exclude .git'
+export FZF_DEFAULT_OPTS="--height=40 --layout=reverse --border --preview='coderay {}'" # sudo gem install coderay
 
-eval $(thefuck --alias)
+# Some ruby trash that has to go on top.
+# export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin"
+# eval "$(rbenv init -)"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
 host="MBP"
-# ZSH_THEME="dfr"
-ZSH_THEME="spaceship"
+ZSH_THEME="spaceship" # or "dfr"
 ZSH_DISABLE_COMPFIX=true
 
 # Uncomment the following line to use case-sensitive completion.
@@ -57,13 +55,11 @@ ZSH_DISABLE_COMPFIX=true
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx zsh-autosuggestions zsh-iterm-touchbar)
+plugins=(git osx zsh-autosuggestions)
 
 # User configuration
-  export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/bin:/Library/TeX/texbin:$HOME/.cargo/bin:$HOME/Library/Python/3.7/bin"
-  export PKG_CONFIG_PATH=/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/bin:/Library/TeX/texbin:$HOME/.cargo/bin:$HOME/Library/Python/3.7/bin"
+export PKG_CONFIG_PATH=/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
@@ -83,15 +79,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -122,6 +109,8 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+# Aliases
+
 alias c='clear'
 alias ls="exa"
 alias lsa="ls -a"
@@ -135,6 +124,8 @@ alias ga="git add"
 alias gc="git commit -m"
 alias gps="git push && gosleap"
 alias gpl="git pull"
+alias gdr="git push -d origin"
+alias gdel="git branch -d"
 alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
 alias simplehttp="python -m SimpleHTTPServer 8000"
@@ -178,24 +169,7 @@ export PATH=$PATH:$GOROOT/bin
 # autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-# imagemagick@6 is keg-only, which means it was not symlinked into /usr/local,
-# because this is an alternate version of another formula.
-#
-# If you need to have imagemagick@6 first in your PATH run:
-#   echo 'export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"' >> ~/.zshrc
-#
-# For compilers to find imagemagick@6 you may need to set:
-#   export LDFLAGS="-L/usr/local/opt/imagemagick@6/lib"
-#   export CPPFLAGS="-I/usr/local/opt/imagemagick@6/include"
-#
-# For pkg-config to find imagemagick@6 you may need to set:
-#   export PKG_CONFIG_PATH="/usr/local/opt/imagemagick@6/lib/pkgconfig"
-#
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rvm/bin"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-[ "$(uname)" = "Darwin" ] && [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 command -v lolcat >/dev/null 2>&1 && fortune | lolcat || fortune
+
