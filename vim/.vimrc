@@ -1,15 +1,31 @@
 syntax on
+set mouse=a
+set numberwidth=1
+set relativenumber
+set clipboard=unnamed
+set showcmd
+set ruler
+set encoding=utf-8
+set showmatch
+set sw=2
 
-let g:onedark_color_overrides = {
-\ "black": {"gui": "#161616", "cterm": "NONE", "cterm16": "0" }
-\}
-
+" Onedark config
 " https://github.com/joshdick/onedark.vim
 " needs colors/onedark.vim in ~/.vim/colors/ directory
 " and autoload/onedark.vim in ~/.vim/autoload/ directory
-colorscheme onedark
-let g:airline_theme='onedark'
+
+" let g:onedark_color_overrides = {
+" \ "black": {"gui": "#161616", "cterm": "NONE", "cterm16": "0" }
+" \}
+
+" colorscheme onedark
+" let g:airline_theme='onedark'
 " set background=dark
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+
+" Indentation
 filetype plugin indent on
 " show existing tab with 2 spaces width
 set tabstop=2
@@ -17,10 +33,13 @@ set tabstop=2
 set shiftwidth=2
 " On pressing tab, insert 2 spaces
 set expandtab
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set autochdir
-" set dir to current file
+set autochdir                 " set dir to current file
+
+" Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=/usr/local/opt/fzf
@@ -34,7 +53,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-airline/vim-airline'
 " Plugin 'enricobacis/vim-airline-clock'
-Plugin 'joshdick/onedark.vim'
+" Plugin 'joshdick/onedark.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'lilydjwg/colorizer'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
