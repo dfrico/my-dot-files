@@ -41,3 +41,6 @@
 [submodule "vim/.vim/bundle/gruvbox"]
 	path = vim/.vim/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox
+[submodule "vim/.vim/bundle/vim-easymotion"]
+	path = vim/.vim/bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
