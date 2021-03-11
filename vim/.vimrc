@@ -1,13 +1,13 @@
 syntax on
-set mouse=a
-set numberwidth=1
-set relativenumber
-set clipboard=unnamed
-set showcmd
-set ruler
+set mouse=a             " can select text and scroll with mouse
+set numberwidth=1       " linenum width
+set relativenumber      " linenums are relative now (abs in ruler)
+set clipboard=unnamed   " copy to the OS clipboard
+set showcmd             " show running command
+set ruler               " show row/col on vim
 set encoding=utf-8
-set showmatch
-set sw=2
+set showmatch           " highlight matching braces
+set sw=2                " 2 space indent
 
 " Onedark config
 " https://github.com/joshdick/onedark.vim
@@ -33,7 +33,6 @@ set tabstop=2
 set shiftwidth=2
 " On pressing tab, insert 2 spaces
 set expandtab
-
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -62,11 +61,16 @@ Plugin 'grep.vim'
 Plugin 'mattn/emmet-vim'
 " Plugin 'rust-lang/rust.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'easymotion/vim-easymotion'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+" Easymotion
+let mapleader=" "
+nmap <Leader>s <Plug>(easymotion-s2)
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-g> :Goyo<CR>
