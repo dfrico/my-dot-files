@@ -1,15 +1,31 @@
 syntax on
+set mouse=a             " can select text and scroll with mouse
+set numberwidth=1       " linenum width
+set relativenumber      " linenums are relative now (abs in ruler)
+set clipboard=unnamed   " copy to the OS clipboard
+set showcmd             " show running command
+set ruler               " show row/col on vim
+set encoding=utf-8
+set showmatch           " highlight matching braces
+set sw=2                " 2 space indent
 
-let g:onedark_color_overrides = {
-\ "black": {"gui": "#161616", "cterm": "NONE", "cterm16": "0" }
-\}
-
+" Onedark config
 " https://github.com/joshdick/onedark.vim
 " needs colors/onedark.vim in ~/.vim/colors/ directory
 " and autoload/onedark.vim in ~/.vim/autoload/ directory
-colorscheme onedark
+
+" let g:onedark_color_overrides = {
+" \ "black": {"gui": "#161616", "cterm": "NONE", "cterm16": "0" }
+" \}
+
+" colorscheme onedark
 " let g:airline_theme='onedark'
 " set background=dark
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+
+" Indentation
 filetype plugin indent on
 " show existing tab with 2 spaces width
 set tabstop=2
@@ -17,10 +33,12 @@ set tabstop=2
 set shiftwidth=2
 " On pressing tab, insert 2 spaces
 set expandtab
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set autochdir
-" set dir to current file
+set autochdir                 " set dir to current file
+
+" Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=/usr/local/opt/fzf
@@ -34,7 +52,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-airline/vim-airline'
 " Plugin 'enricobacis/vim-airline-clock'
-Plugin 'joshdick/onedark.vim'
+" Plugin 'joshdick/onedark.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'lilydjwg/colorizer'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
@@ -42,11 +61,16 @@ Plugin 'grep.vim'
 Plugin 'mattn/emmet-vim'
 " Plugin 'rust-lang/rust.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'easymotion/vim-easymotion'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+" Easymotion
+let mapleader=" "
+nmap <Leader>s <Plug>(easymotion-s2)
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-g> :Goyo<CR>
