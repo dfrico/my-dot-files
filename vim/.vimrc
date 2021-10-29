@@ -8,6 +8,7 @@ set ruler               " show row/col on vim
 set encoding=utf-8
 set showmatch           " highlight matching braces
 set sw=2                " 2 space indent
+set shell=/bin/zsh
 
 " Onedark config
 " https://github.com/joshdick/onedark.vim
@@ -93,14 +94,16 @@ set splitbelow
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set shell=/usr/local/bin/zsh
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+
 let g:user_emmet_leader_key=','
 
 " Code folding
