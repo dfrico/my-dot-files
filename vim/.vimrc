@@ -63,6 +63,7 @@ Plugin 'mattn/emmet-vim'
 " Plugin 'rust-lang/rust.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'neoclide/coc.nvim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
