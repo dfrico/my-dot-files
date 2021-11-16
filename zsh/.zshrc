@@ -111,11 +111,11 @@ load-nvmrc
 # Aliases
 
 alias c='clear'
-alias ls="exa"
+alias ls="exa -l --icons"
+alias l="exa -1"
 alias lsa="ls -a"
 alias ..="cd .."
 alias home="cd ~ && clear"
-alias lsd="ls -GFlash"
 alias gi="git init"
 alias gs="git status"
 alias gd="git diff"
