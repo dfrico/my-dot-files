@@ -50,3 +50,6 @@
 [submodule "vim/.vim/bundle/coc.nvim"]
 	path = vim/.vim/bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
+[submodule "vim/.vim/bundle/vim-mustache-handlebars"]
+	path = vim/.vim/bundle/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars
