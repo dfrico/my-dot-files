@@ -2,8 +2,27 @@
 export ZSH=$HOME/.oh-my-zsh
 export HOMEBREW_INSTALL_BADGE="✨"
 export LC_ALL=en_US.UTF-8
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude node_modules --exclude .git'
+
+# FZF
 export FZF_DEFAULT_OPTS="--height=40 --layout=reverse --border --preview='coderay {}'" # sudo gem install coderay
+# Deprecated ?:
+# export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude node_modules --exclude .git'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
+}
 
 # Some ruby trash that has to go on top.
 # export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin"
@@ -171,4 +190,6 @@ export PATH=$PATH:$GOROOT/bin
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 command -v lolcat >/dev/null 2>&1 && fortune | lolcat || fortune
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
