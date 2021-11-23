@@ -5,8 +5,8 @@ export LC_ALL=en_US.UTF-8
 
 # FZF
 export FZF_DEFAULT_OPTS="--height=40 --layout=reverse --border --preview='coderay {}'" # sudo gem install coderay
-# Deprecated ?:
-# export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude node_modules --exclude .git'
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules,.git}"' # brew install ripgrep
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Options to fzf command
 export FZF_COMPLETION_OPTS='--border --info=inline'
