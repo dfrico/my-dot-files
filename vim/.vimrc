@@ -26,6 +26,7 @@ set shell=/bin/zsh
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
+hi Normal ctermbg=None
 
 " Indentation
 filetype plugin indent on
