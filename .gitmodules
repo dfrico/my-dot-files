@@ -56,3 +56,9 @@
 [submodule "ranger/.config/ranger/plugins/ranger_devicons"]
 	path = ranger/.config/ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons
+[submodule "vim/.vim/bundle/bclose.vim"]
+	path = vim/.vim/bundle/bclose.vim
+	url = https://github.com/rbgrouleff/bclose.vim
+[submodule "vim/.vim/bundle/ranger-explorer.vim"]
+	path = vim/.vim/bundle/ranger-explorer.vim
+	url = https://github.com/iberianpig/ranger-explorer.vim

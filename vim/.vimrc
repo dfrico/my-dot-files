@@ -68,11 +68,23 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mhinz/vim-startify'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'neoclide/coc.nvim'
+" Ranger
+Plugin 'iberianpig/ranger-explorer.vim'
+Plugin 'rbgrouleff/bclose.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+" Ranger
+let g:ranger_explorer_keymap_edit    = '<C-o>'
+let g:ranger_explorer_keymap_tabedit = '<C-t>'
+let g:ranger_explorer_keymap_split   = '<C-s>'
+let g:ranger_explorer_keymap_vsplit  = '<C-v>'
+nnoremap <silent><Leader>n :RangerOpenCurrentFile<CR>
+nnoremap <silent><Leader>c :RangerOpenCurrentDir<CR>
+nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
 
 " Easymotion
 let mapleader=" "
