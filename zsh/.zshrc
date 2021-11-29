@@ -24,6 +24,19 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
 }
 
+_fzf_git_log() {
+    local selections=$(
+      glg --color=always "$@" |
+        fzf --ansi --no-sort --no-height \
+            --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 |
+                       xargs -I@ sh -c 'git show --color=always @'"
+      )
+    if [[ -n $selections ]]; then
+        local commits=$(echo "$selections" | sed 's/^[* |]*//' | cut -d' ' -f1 | tr '\n' ' ')
+        git show $commits
+    fi
+}
+
 # Some ruby trash that has to go on top.
 # export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin"
 # eval "$(rbenv init -)"
@@ -135,6 +148,8 @@ alias l="exa -1"
 alias lsa="ls -a"
 alias ..="cd .."
 alias home="cd ~ && clear"
+
+# git
 alias gi="git init"
 alias gs="git status"
 alias gd="git diff"
@@ -144,6 +159,8 @@ alias gps="git push && gosleap"
 alias gpl="git pull"
 alias gdr="git push -d origin"
 alias gdel="git branch -d"
+alias gll='_fzf_git_log'
+
 alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
 alias simplehttp="python -m SimpleHTTPServer 8000"
