@@ -62,3 +62,6 @@
 [submodule "vim/.vim/bundle/ranger-explorer.vim"]
 	path = vim/.vim/bundle/ranger-explorer.vim
 	url = https://github.com/iberianpig/ranger-explorer.vim
+[submodule "vim/.vim/bundle/indent-blankline.nvim"]
+	path = vim/.vim/bundle/indent-blankline.nvim
+	url = git@github.com:lukas-reineke/indent-blankline.nvim.git
