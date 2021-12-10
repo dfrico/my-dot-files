@@ -63,14 +63,15 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'grep.vim'
 Plugin 'mattn/emmet-vim'
-" Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mhinz/vim-startify'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'neoclide/coc.nvim'
+Plugin 'lukas-reineke/indent-blankline.nvim'
 " Ranger
-Plugin 'iberianpig/ranger-explorer.vim'
-Plugin 'rbgrouleff/bclose.vim'
+" Plugin 'iberianpig/ranger-explorer.vim'
+" Plugin 'rbgrouleff/bclose.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -117,10 +118,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
-
 let g:user_emmet_leader_key=','
 
 let g:mustache_abbreviations = 1
