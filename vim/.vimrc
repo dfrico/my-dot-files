@@ -63,14 +63,15 @@ Plugin 'lilydjwg/colorizer'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'grep.vim'
 Plugin 'mattn/emmet-vim'
-" Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mhinz/vim-startify'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'neoclide/coc.nvim'
+Plugin 'lukas-reineke/indent-blankline.nvim'
 " Ranger
-Plugin 'iberianpig/ranger-explorer.vim'
-Plugin 'rbgrouleff/bclose.vim'
+" Plugin 'iberianpig/ranger-explorer.vim'
+" Plugin 'rbgrouleff/bclose.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -111,7 +112,6 @@ set splitbelow
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-set shell=/usr/local/bin/zsh
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
