@@ -2631,9 +2631,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Iosevka-Term-Light-Oblique 16</string>
-			<key>Only The Default BG Color Uses Transparency</key>
-			<false/>
+			<string>DankMono-Italic 16</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Place Prompt at First Column</key>

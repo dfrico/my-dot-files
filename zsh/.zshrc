@@ -37,6 +37,11 @@ _fzf_git_log() {
     fi
 }
 
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" "${2:-.}" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 host="MBP"
@@ -114,6 +119,7 @@ alias c='clear'
 alias ls="exa -l --icons"
 alias l="exa -1"
 alias lsa="ls -a"
+alias lt="ls --tree"
 alias ..="cd .."
 alias home="cd ~ && clear"
 

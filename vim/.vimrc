@@ -104,23 +104,30 @@ map <C-l> <C-W>l
 set splitright
 set splitbelow
 
+" Make adjusing split sizes a bit more friendly
+" <C-arrows> don't work with Mission Control on macOS
+noremap <silent><Leader><Left> :vertical resize +3<CR>
+noremap <silent><Leader><Right> :vertical resize -3<CR>
+noremap <silent><Leader><Up> :resize +3<CR>
+noremap <silent><Leader><Down> :resize -3<CR>
+
 " Press F4 to toggle highlighting on/off, and show current value.
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 :noremap <F3> :set nu! nu?<CR>
 
 " Linter stuff
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-" let g:user_emmet_leader_key=','
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+let g:user_emmet_leader_key=','
 
 let g:mustache_abbreviations = 1
 
