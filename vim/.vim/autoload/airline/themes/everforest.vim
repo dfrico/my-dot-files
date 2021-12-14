@@ -1,0 +1,1 @@
+/Users/blayhem/.vim/bundle/everforest/autoload/airline/themes/everforest.vim

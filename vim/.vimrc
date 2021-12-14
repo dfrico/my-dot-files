@@ -11,21 +11,21 @@ set showmatch           " highlight matching braces
 set sw=2                " 2 space indent
 set shell=/bin/zsh
 
-" Onedark config
-" https://github.com/joshdick/onedark.vim
-" needs colors/onedark.vim in ~/.vim/colors/ directory
-" and autoload/onedark.vim in ~/.vim/autoload/ directory
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
 
-" let g:onedark_color_overrides = {
-" \ "black": {"gui": "#161616", "cterm": "NONE", "cterm16": "0" }
-" \}
+set background=dark
+let g:everforest_transparent_background = 1
+let g:everforest_diagnostic_text_highlight = 1
+let g:everforest_diagnostic_line_highlight = 1
+let g:everforest_diagnostic_virtual_text = 'colored'
+" Set contrast goes before `colorscheme`
+let g:everforest_background = 'hard' " 'hard'|'medium'|'soft'
+let g:airline_theme = 'everforest'
+colorscheme everforest
 
-" colorscheme onedark
-" let g:airline_theme='onedark'
-" set background=dark
-
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
 hi Normal ctermbg=None
 
 " Indentation
@@ -59,7 +59,7 @@ Plugin 'junegunn/fzf'
 " Plugin 'joshdick/onedark.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'lilydjwg/colorizer'
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'grep.vim'
 Plugin 'mattn/emmet-vim'

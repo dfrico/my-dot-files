@@ -65,3 +65,6 @@
 [submodule "vim/.vim/bundle/indent-blankline.nvim"]
 	path = vim/.vim/bundle/indent-blankline.nvim
 	url = git@github.com:lukas-reineke/indent-blankline.nvim.git
+[submodule "vim/.vim/bundle/everforest"]
+	path = vim/.vim/bundle/everforest
+	url = git@github.com:sainnhe/everforest.git
