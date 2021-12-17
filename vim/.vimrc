@@ -173,6 +173,16 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" coc.vim extensions
+let g:coc_global_extensions = [
+  \'coc-prettier',
+  \'coc-html',
+  \'coc-tsserver',
+  \'coc-json',
+  \'coc-eslint',
+  \'coc-git'
+  \]
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
