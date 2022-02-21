@@ -24,6 +24,9 @@ set shell=/bin/zsh
 " let g:airline_theme='onedark'
 " set background=dark
 
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
 hi Normal ctermbg=None
