@@ -11,12 +11,6 @@ set showmatch           " highlight matching braces
 set sw=2                " 2 space indent
 set shell=/bin/zsh
 
-" Important!!
-if has('termguicolors')
-  set termguicolors
-endif
-
-set background=dark
 let g:airline_section_x = ''
 let g:airline_section_y = ''
 
