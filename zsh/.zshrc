@@ -137,7 +137,7 @@ alias gll='_fzf_git_log'
 
 alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
-alias simplehttp="python -m SimpleHTTPServer 8000"
+alias simplehttp="python -m SimpleHTTPServer 3000"
 alias brewit='brew update && brew upgrade && brew cleanup; brew doctor'
 alias status="spotify status"
 alias playlist="spotify play list"
