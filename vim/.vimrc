@@ -17,15 +17,11 @@ if has('termguicolors')
 endif
 
 set background=dark
-let g:everforest_transparent_background = 1
-let g:everforest_diagnostic_text_highlight = 1
-let g:everforest_diagnostic_line_highlight = 1
-let g:everforest_diagnostic_virtual_text = 'colored'
-" Set contrast goes before `colorscheme`
-let g:everforest_background = 'hard' " 'hard'|'medium'|'soft'
-let g:airline_theme = 'everforest'
-colorscheme everforest
+let g:airline_section_x = ''
+let g:airline_section_y = ''
 
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
 hi Normal ctermbg=None
 
 " Indentation
