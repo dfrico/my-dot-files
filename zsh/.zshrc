@@ -2,8 +2,45 @@
 export ZSH=$HOME/.oh-my-zsh
 export HOMEBREW_INSTALL_BADGE="✨"
 export LC_ALL=en_US.UTF-8
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude node_modules --exclude .git'
+
+# FZF
 export FZF_DEFAULT_OPTS="--height=40 --layout=reverse --border --preview='coderay {}'" # sudo gem install coderay
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules,.git}"' # brew install ripgrep
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" --exclude "node_modules" . "$1"
+}
+
+_fzf_git_log() {
+    local selections=$(
+      glg --color=always "$@" |
+        fzf --ansi --no-sort --no-height \
+            --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 |
+                       xargs -I@ sh -c 'git show --color=always @'"
+      )
+    if [[ -n $selections ]]; then
+        local commits=$(echo "$selections" | sed 's/^[* |]*//' | cut -d' ' -f1 | tr '\n' ' ')
+        git show $commits
+    fi
+}
+
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" "${2:-.}" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
 
 # Some ruby trash that has to go on top.
 # export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin"
@@ -81,9 +118,10 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # NVM
-# export NVM_DIR="$HOME/.nvm"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# . "/usr/local/opt/nvm/nvm.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # this goes after nvm initialization!
 autoload -U add-zsh-hook
@@ -110,11 +148,14 @@ load-nvmrc
 # Aliases
 
 alias c='clear'
-alias ls="exa"
+alias ls="exa -l --icons"
+alias l="exa -1"
 alias lsa="ls -a"
+alias lt="ls --tree"
 alias ..="cd .."
 alias home="cd ~ && clear"
-alias lsd="ls -GFlash"
+
+# git
 alias gi="git init"
 alias gs="git status"
 alias gd="git diff"
@@ -124,6 +165,8 @@ alias gps="git push"
 alias gpl="git pull"
 alias gdr="git push -d origin"
 alias gdel="git branch -d"
+alias gll='_fzf_git_log'
+
 alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
 alias simplehttp="python -m SimpleHTTPServer 8000"
@@ -170,4 +213,6 @@ export PATH=$PATH:$GOROOT/bin
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 command -v lolcat >/dev/null 2>&1 && fortune | lolcat || fortune
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

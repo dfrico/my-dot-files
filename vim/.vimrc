@@ -1,4 +1,5 @@
 syntax on
+set number
 set mouse=a             " can select text and scroll with mouse
 set numberwidth=1       " linenum width
 set relativenumber      " linenums are relative now (abs in ruler)
@@ -8,6 +9,7 @@ set ruler               " show row/col on vim
 set encoding=utf-8
 set showmatch           " highlight matching braces
 set sw=2                " 2 space indent
+set shell=/bin/zsh
 
 " Onedark config
 " https://github.com/joshdick/onedark.vim
@@ -22,8 +24,12 @@ set sw=2                " 2 space indent
 " let g:airline_theme='onedark'
 " set background=dark
 
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
+hi Normal ctermbg=None
 
 " Indentation
 filetype plugin indent on
@@ -51,6 +57,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'junegunn/fzf'
 " Plugin 'enricobacis/vim-airline-clock'
 " Plugin 'joshdick/onedark.vim'
 Plugin 'morhetz/gruvbox'
@@ -59,14 +66,29 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'grep.vim'
 Plugin 'mattn/emmet-vim'
-" Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mhinz/vim-startify'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'neoclide/coc.nvim'
+Plugin 'lukas-reineke/indent-blankline.nvim'
+" Ranger
+" Plugin 'iberianpig/ranger-explorer.vim'
+" Plugin 'rbgrouleff/bclose.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+" Ranger
+let g:ranger_explorer_keymap_edit    = '<C-o>'
+let g:ranger_explorer_keymap_tabedit = '<C-t>'
+let g:ranger_explorer_keymap_split   = '<C-s>'
+let g:ranger_explorer_keymap_vsplit  = '<C-v>'
+nnoremap <silent><Leader>n :RangerOpenCurrentFile<CR>
+nnoremap <silent><Leader>c :RangerOpenCurrentDir<CR>
+nnoremap <silent><Leader>f :RangerOpenProjectRootDir<CR>
 
 " Easymotion
 let mapleader=" "
@@ -85,6 +107,13 @@ map <C-l> <C-W>l
 set splitright
 set splitbelow
 
+" Make adjusing split sizes a bit more friendly
+" <C-arrows> don't work with Mission Control on macOS
+noremap <silent><Leader><Left> :vertical resize +3<CR>
+noremap <silent><Leader><Right> :vertical resize -3<CR>
+noremap <silent><Leader><Up> :resize +3<CR>
+noremap <silent><Leader><Down> :resize -3<CR>
+
 " Press F4 to toggle highlighting on/off, and show current value.
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 :noremap <F3> :set nu! nu?<CR>
@@ -99,15 +128,66 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 let g:user_emmet_leader_key=','
+
+let g:mustache_abbreviations = 1
 
 " Code folding
 set foldmethod=indent   
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+" Autocompletion coc.vim and others
+" Give more space for displaying messages.
+" set cmdheight=2
+set updatetime=300
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics - WTF is this?
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" coc.vim extensions
+let g:coc_global_extensions = [
+  \'coc-prettier',
+  \'coc-html',
+  \'coc-tsserver',
+  \'coc-json',
+  \'coc-eslint',
+  \'coc-git'
+  \]
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
 let g:ascii = [
