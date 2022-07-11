@@ -176,6 +176,7 @@ alias playlist="spotify play list"
 alias playuri="spotify play uri"
 alias vim="nvim"
 alias search="grep -Rw"
+alias s="search"
 
 # sudo gem install iStats
 alias temp="istats cpu temp"
@@ -214,5 +215,16 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 command -v lolcat >/dev/null 2>&1 && fortune | lolcat || fortune
 
+if [ -f ~/.zprofile ]; then
+  . ~/.zprofile
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+# bun completions
+[ -s "/Users/blayhem/.bun/_bun" ] && source "/Users/blayhem/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/blayhem/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
