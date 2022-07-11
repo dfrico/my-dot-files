@@ -1,40 +1,36 @@
-# Homebrew installation
+# 1. Homebrew installation
 if hash brew 2>/dev/null; then
     echo "Brew is already installed"
 else
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# brew files
-if hash autojump 2>/dev/null; then
-    echo "Brewfile apps already installed ?"
-else
-    brew bundle
-fi
+# 2. Installing apps
+./brewapps.sh
+
+# 3. Migrating basic configs
+stow nvim
+stow vim
+stow zsh
+# TODO: finish config bee, iTerm...
 
 if [ "$ZSH_CUSTOM" == "" ]; then
     ZSH_CUSTOM="~/.oh-my-zsh/custom"
 fi
 
-# zsh plugins
-if [ "$0" == *"zsh" ]; then
-    echo "Installing plugins to" $ZSH_CUSTOM
-    # https://github.com/denysdovhan/spaceship-prompt/
-    git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-    ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+# 4. oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-    # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-    brew install zsh-syntax-highlighting
+# 5. oh-my-zsh plugins
+echo "Installing plugins to" $ZSH_CUSTOM
+# https://github.com/spaceship-prompt/spaceship-prompt 
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+brew install zsh-syntax-highlighting
+# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+brew install zsh-autosuggestions
 
-    # https://github.com/zsh-users/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-    git clone https://github.com/iam4x/zsh-iterm-touchbar.git ${ZSH_CUSTOM1:-$ZSH/custom}/plugins/zsh-iterm-touchbar
-else
-    # oh-my-zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
-
-brew tap caskroom/fonts && brew cask install font-iosevka
 # https://github.com/powerline/fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
@@ -42,14 +38,6 @@ cd fonts
 cd ..
 rm -rf fonts
 
-brew tap caskroom/fonts && brew cask install font-iosevka
-
-# pip apps
-if hash rtv 2>/dev/null; then
-    echo "Pip apps already installed"
-else
-    pip3 install rtv haxor-news
-fi
-
-# ADD THIS TO .ZSHRC PLUGINS:
-# plugins=(zsh-autosuggestions)
+# 6. Goodies
+curl https://bun.sh/install | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
