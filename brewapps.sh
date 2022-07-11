@@ -30,6 +30,7 @@ mas install 409203825  # Numbers         (11.2)
 mas install 953286746  # Darkroom        (5.8.4)
 mas install 1289583905 # Pixelmator Pro  (2.3.5)
 mas install 668208984  # GIPHY CAPTURE   (4.2)
+mas install 985367838  # Microsoft Outlook  (16.62)
 
 # Formulae
 brew install stow

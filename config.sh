@@ -11,6 +11,7 @@ fi
 # 3. Migrating basic configs
 stow nvim
 stow vim
+# cd vim/.vim/bundle/coc.nvim; yarn install
 stow zsh
 # TODO: finish config bee, iTerm...
 
