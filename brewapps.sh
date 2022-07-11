@@ -16,6 +16,7 @@ brew install --cask obs
 brew install --cask topnotch
 brew install --cask slack
 brew install --cask font-fira-code-nerd-font
+brew install --cask telegram
 
 # MAS Apps
 brew install mas
