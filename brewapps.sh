@@ -15,8 +15,10 @@ brew install --cask firefox
 brew install --cask obs
 brew install --cask topnotch
 brew install --cask slack
-brew install --cask font-fira-code-nerd-font
 brew install --cask telegram
+
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code-nerd-font
 
 # MAS Apps
 brew install mas
@@ -47,4 +49,4 @@ brew install neovim
 brew install pfetch
 brew install ripgrep
 brew install yt-dlp
-
+brew install tree
