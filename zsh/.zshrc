@@ -228,3 +228,7 @@ fi
 # Bun
 export BUN_INSTALL="/Users/blayhem/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Bun
+export BUN_INSTALL="/Users/blayhem/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
