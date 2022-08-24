@@ -213,7 +213,7 @@ export PATH=$PATH:$GOROOT/bin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-command -v lolcat >/dev/null 2>&1 && fortune | lolcat || fortune
+command -v lolcat >/dev/null 2>&1 && fortune ~/my-dot-files/fortune/ror | lolcat || fortune
 
 if [ -f ~/.zprofile ]; then
   . ~/.zprofile
