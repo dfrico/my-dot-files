@@ -229,6 +229,16 @@ fi
 export BUN_INSTALL="/Users/blayhem/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Bun
-export BUN_INSTALL="/Users/blayhem/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export AWS_CONFIG_FILE=/Users/blayhem/.aws/fatmap-config
+alias fm-mfa-engineering='awsume fatmap-default-engineering -o fatmap-default && awsume -u'
+alias fm-mfa-terraform='awsume fatmap-root-terraform --role-duration 3600'
+
+# asdf
+export PATH="/Users/blayhem/.asdf/shims:$PATH"
+
+alias kcuc-prod='kubectl config set current-context platform-production'
+alias kcuc-dev='kubectl config set current-context platform-development'
+# kcuc-dev
+
+bindkey \^U backward-kill-line
+
