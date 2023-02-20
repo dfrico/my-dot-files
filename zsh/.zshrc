@@ -49,7 +49,9 @@ fif() {
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 host="MBP"
-ZSH_THEME="spaceship" # or "dfr"
+ZSH_THEME="spaceship"
+export SPACESHIP_CONFIG="$HOME/.config/spaceship.zsh"
+
 ZSH_DISABLE_COMPFIX=true
 
 # Uncomment the following line to use case-sensitive completion.
@@ -92,7 +94,7 @@ ZSH_DISABLE_COMPFIX=true
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git macos zsh-autosuggestions)
+plugins=(git macos zsh-autosuggestions zsh-syntax-highlighting asdf)
 
 # User configuration
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/bin:/Library/TeX/texbin:$HOME/.cargo/bin:$HOME/Library/Python/3.7/bin"
@@ -142,8 +144,8 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 # Aliases
 
