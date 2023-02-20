@@ -62,12 +62,10 @@ Plugin 'junegunn/fzf'
 " Plugin 'joshdick/onedark.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'lilydjwg/colorizer'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'grep.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'rust-lang/rust.vim'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mhinz/vim-startify'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'neoclide/coc.nvim'
@@ -96,7 +94,7 @@ nmap <Leader>s <Plug>(easymotion-s2)
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-g> :Goyo<CR>
-map <C-s> :SyntasticToggleMode<CR>
+map <C-s> :CocCommand prettier.formatFile <bar> w<CR>
 
 " Splits
 map <C-j> <C-W>j
@@ -118,21 +116,14 @@ noremap <silent><Leader><Down> :resize -3<CR>
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 :noremap <F3> :set nu! nu?<CR>
 
+nnoremap gb <C-6>
+nnoremap gb <C-^>
+
 " Linter stuff
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
 let g:user_emmet_leader_key=','
-
-let g:mustache_abbreviations = 1
 
 " Code folding
 set foldmethod=indent   
