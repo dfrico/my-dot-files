@@ -4,3 +4,5 @@ __pycache__
 node_modules
 
 zsh/.zshrc-e
+
+packer_compiled.lua
