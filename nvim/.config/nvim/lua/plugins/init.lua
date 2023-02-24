@@ -1,95 +1,54 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
-require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-
-    -- LSP Configuration & Plugins
-    use {
-        'neovim/nvim-lspconfig',
-        requires = { -- Automatically install LSPs to stdpath for neovim
-        'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', -- Useful status updates for LSP
-        'j-hui/fidget.nvim', -- Additional lua configuration, makes nvim stuff amazing
-        'folke/neodev.nvim'}
-    }
-
-    -- Treesitter - better syntax detection and highlight
-    use { -- Highlight, edit, and navigate code
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            pcall(require('nvim-treesitter.install').update {
-                with_sync = true
-            })
-        end
-    }
-
-    -- Telescope fuzzy finder
-    use {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
-        requires = {{'nvim-lua/plenary.nvim'}}
-    }
-
-    -- UI
-    use 'rhysd/git-messenger.vim'
-    use 'lewis6991/gitsigns.nvim'
-
-    use 'nvim-lualine/lualine.nvim'
-
-    use 'lukas-reineke/indent-blankline.nvim'
-
-    use 'kyazdani42/nvim-web-devicons'
-    use 'kyazdani42/nvim-tree.lua'
-
-    use 'psliwka/vim-smoothie'
-
-    -- Utils
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-surround'
-    use 'tpope/vim-repeat'
-    use 'skywind3000/asyncrun.vim'
-    use 'numToStr/Comment.nvim'
-
-    -- Colorschemes
-    use({
-        "catppuccin/nvim",
-        as = "catppuccin"
+-- Install lazy.nvim if it's not installed
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
     })
-    use 'norcalli/nvim-colorizer.lua'
-    use 'cormacrelf/dark-notify'
+end
+vim.opt.rtp:prepend(lazypath)
+-- end of lazy install
+-- packer migration guide: https://github.com/folke/lazy.nvim#-migration-guide
 
-    -- Languages
-    use 'sebdah/vim-delve'
+return require('lazy').setup("plugins/config")
 
-    -- Misc
-    use 'LnL7/vim-nix'
+-- TODO: check:
+-- UI
+-- 'rhysd/git-messenger.vim',
+-- 'lewis6991/gitsigns.nvim', -- another ??
+-- 'lukas-reineke/indent-blankline.nvim',
+-- 'kyazdani42/nvim-web-devicons',
+-- 'kyazdani42/nvim-tree.lua', -- also neotree ??
+-- 'psliwka/vim-smoothie',
 
-    -- Rosé Pine theme for neovim
-    -- use({
-    --   'rose-pine/neovim',
-    --   as = 'rose-pine',
-    --   config = function()
-    -- 	  vim.cmd('colorscheme rose-pine')
-    --   end
-    -- })
+-- Utils
+-- 'tpope/vim-fugitive', for git signs and stuff
+-- 'tpope/vim-surround',
+-- 'tpope/vim-repeat',
+-- 'skywind3000/asyncrun.vim',
+-- 'numToStr/Comment.nvim',
 
-    -- old vim packages
-    -- 'scrooloose/nerdtree'
-    -- 'junegunn/goyo.vim'
-    -- 'vim-airline/vim-airline'
-    -- 'junegunn/fzf' <- fuzzy finder
-    -- 'lilydjwg/colorizer'
-    -- 'airblade/vim-gitgutter'
-    -- 'grep.vim' <- required for fuzzy finder ?
-    -- 'mattn/emmet-vim'
-    -- 'mhinz/vim-startify' <- improved start screen
-    -- 'easymotion/vim-easymotion' <- navigate quickly to any word
-    -- 'neoclide/coc.nvim' <- code autocompletion
-    -- 'lukas-reineke/indent-blankline.nvim'
+-- 'norcalli/nvim-colorizer.lua', -- colorizer
+-- 'cormacrelf/dark-notify',
 
-end)
+-- Misc
+-- 'LnL7/vim-nix',
 
--- CONFIG - WIP
--- require("plugins.config")
+-- old vim packages
+-- 'scrooloose/nerdtree' -> neotree - https://github.com/nvim-neo-tree/neo-tree.nvim
+-- 'junegunn/goyo.vim' -> zen mode - https://github.com/folke/zen-mode.nvim
+-- 'vim-airline/vim-airline' -> lualine - https://github.com/nvim-lualine/lualine.nvim
+-- 'junegunn/fzf' -> telescope
+-- 'lilydjwg/colorizer' -> colorizer
+-- 'airblade/vim-gitgutter' - https://github.com/airblade/vim-gitgutter
+-- 'grep.vim' <- required for fuzzy finder ?
+-- 'mattn/emmet-vim' -> skipped
+-- 'mhinz/vim-startify' -> alpha - https://github.com/goolord/alpha-nvim
+-- 'easymotion/vim-easymotion'
+-- 'neoclide/coc.nvim' -> ?? lsp??
+-- 'lukas-reineke/indent-blankline.nvim'

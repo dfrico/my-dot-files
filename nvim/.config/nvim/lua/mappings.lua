@@ -8,8 +8,8 @@ vim.keymap.set("n", "<C-h>", "<C-W>h")
 vim.keymap.set("n", "<C-l>", "<C-W>l")
 
 -- Plugin remaps
-vim.keymap.set("n", "<C-n>", vim.cmd.NERDTreeToggle)
-vim.keymap.set("n", "<C-g>", vim.cmd.Goyo)
+vim.keymap.set("n", "<C-n>", vim.cmd.Neotree)
+vim.keymap.set("n", "<C-g>", vim.cmd.ZenMode)
 -- vim.keymap.set("n", "<leader>s", vim.cmd.easymotion - s2)
 -- TODO: add coc remaps
 
