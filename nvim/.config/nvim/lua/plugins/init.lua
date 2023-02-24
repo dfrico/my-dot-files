@@ -2,7 +2,7 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -90,3 +90,6 @@ return require('packer').startup(function(use)
     -- 'lukas-reineke/indent-blankline.nvim'
 
 end)
+
+-- CONFIG - WIP
+-- require("plugins.config")
