@@ -18,5 +18,6 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.sw = 2 --  2 space indent
 vim.opt.tabstop = 2 --  when indenting with '>', use 2 spaces width
+vim.opt.termguicolors = true --  enable 24-bit RGB colors
 vim.opt.updatetime = 50
 vim.opt.wrap = false
