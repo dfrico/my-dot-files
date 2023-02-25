@@ -41,14 +41,14 @@ return require('lazy').setup("plugins/config")
 
 -- old vim packages
 -- 'scrooloose/nerdtree' -> neotree - https://github.com/nvim-neo-tree/neo-tree.nvim
--- 'junegunn/goyo.vim' -> zen mode - https://github.com/folke/zen-mode.nvim
+-- 'junegunn/goyo.vim' -> zen mode
 -- 'vim-airline/vim-airline' -> lualine - https://github.com/nvim-lualine/lualine.nvim
 -- 'junegunn/fzf' -> telescope
 -- 'lilydjwg/colorizer' -> colorizer
 -- 'airblade/vim-gitgutter' - https://github.com/airblade/vim-gitgutter
 -- 'grep.vim' <- required for fuzzy finder ?
 -- 'mattn/emmet-vim' -> skipped
--- 'mhinz/vim-startify' -> alpha - https://github.com/goolord/alpha-nvim
+-- 'mhinz/vim-startify' -> alpha
 -- 'easymotion/vim-easymotion'
 -- 'neoclide/coc.nvim' -> ?? lsp??
 -- 'lukas-reineke/indent-blankline.nvim'

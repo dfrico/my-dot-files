@@ -14,25 +14,25 @@ vim.keymap.set("n", "<C-g>", vim.cmd.ZenMode)
 -- TODO: add coc remaps
 
 vim.keymap.set("n", "gb", "<C-6")
--- OPT vim.keymap.set("n", "gf", "<C-^>")
+-- OPTIONAL vim.keymap.set("n", "gf", "<C-^>")
 
-silentNoremap = {
+SilentNoremap = {
     noremap = true,
     silent = true
 }
 
 -- set({mode}, {lhs}, {rhs}, {opts})
-vim.keymap.set('n', '<leader><left>', ":vertical resize +3<CR>", silentNoremap)
-vim.keymap.set('n', "<leader><right>", ":vertical resize -3<CR>", silentNoremap)
-vim.keymap.set('n', "<leader><up>", ":resize +3<CR>", silentNoremap)
-vim.keymap.set('n', "<leader><down>", ":resize -3<CR>", silentNoremap)
+vim.keymap.set('n', '<leader><left>', ":vertical resize +3<CR>", SilentNoremap)
+vim.keymap.set('n', "<leader><right>", ":vertical resize -3<CR>", SilentNoremap)
+vim.keymap.set('n', "<leader><up>", ":resize +3<CR>", SilentNoremap)
+vim.keymap.set('n', "<leader><down>", ":resize -3<CR>", SilentNoremap)
 
 -- MOVEMENTS
 -- center cursor when going down or up by half pages
-vim.keymap.set("n", "<C-d>", "<C-d>zz", silentNoremap)
-vim.keymap.set("n", "<C-u>", "<C-u>zz", silentNoremap)
+vim.keymap.set("n", "<C-d>", "<C-d>zz", SilentNoremap)
+vim.keymap.set("n", "<C-u>", "<C-u>zz", SilentNoremap)
 -- center cursor when searching
-vim.keymap.set("n", "n", "nzz", silentNoremap)
-vim.keymap.set("n", "N", "Nzz", silentNoremap)
+vim.keymap.set("n", "n", "nzz", SilentNoremap)
+vim.keymap.set("n", "N", "Nzz", SilentNoremap)
 -- vim.keymap.set("n", "n", "nzzzv")
 -- vim.keymap.set("n", "N", "Nzzzv")
