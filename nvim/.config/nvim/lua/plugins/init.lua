@@ -40,9 +40,7 @@ return require('lazy').setup("plugins/config")
 -- 'LnL7/vim-nix',
 
 -- old vim packages
--- 'scrooloose/nerdtree' -> neotree - https://github.com/nvim-neo-tree/neo-tree.nvim
--- 'junegunn/goyo.vim' -> zen mode
--- 'vim-airline/vim-airline' -> lualine - https://github.com/nvim-lualine/lualine.nvim
+-- 'vim-airline/vim-airline' ->
 -- 'junegunn/fzf' -> telescope
 -- 'lilydjwg/colorizer' -> colorizer
 -- 'airblade/vim-gitgutter' - https://github.com/airblade/vim-gitgutter
