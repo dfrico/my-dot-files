@@ -43,7 +43,6 @@ return require('lazy').setup("plugins/config")
 -- 'vim-airline/vim-airline' ->
 -- 'junegunn/fzf' -> telescope
 -- 'lilydjwg/colorizer' -> colorizer
--- 'airblade/vim-gitgutter' - https://github.com/airblade/vim-gitgutter
 -- 'grep.vim' <- required for fuzzy finder ?
 -- 'mattn/emmet-vim' -> skipped
 -- 'mhinz/vim-startify' -> alpha
