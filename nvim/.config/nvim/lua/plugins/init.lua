@@ -33,19 +33,6 @@ return require('lazy').setup("plugins/config")
 -- 'skywind3000/asyncrun.vim',
 -- 'numToStr/Comment.nvim',
 
--- 'norcalli/nvim-colorizer.lua', -- colorizer
--- 'cormacrelf/dark-notify',
-
 -- Misc
 -- 'LnL7/vim-nix',
-
--- old vim packages
--- 'vim-airline/vim-airline' ->
--- 'junegunn/fzf' -> telescope
--- 'lilydjwg/colorizer' -> colorizer
--- 'grep.vim' <- required for fuzzy finder ?
--- 'mattn/emmet-vim' -> skipped
--- 'mhinz/vim-startify' -> alpha
--- 'easymotion/vim-easymotion'
--- 'neoclide/coc.nvim' -> ?? lsp??
--- 'lukas-reineke/indent-blankline.nvim'
+-- 'cormacrelf/dark-notify',
