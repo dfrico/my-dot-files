@@ -1,5 +1,5 @@
-function ColorMyPencils(color)
-    color = color or "catppuccin"
+function ColorMyPencils(color) -- unused
+    color = color or "catppuccin-mocha"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", {
@@ -10,7 +10,5 @@ function ColorMyPencils(color)
     })
 end
 
-ColorMyPencils()
--- TODO: add gruvbox or onedark
--- let g:gruvbox_contrast_dark = "hard"
--- hi Normal ctermbg=None
+-- ColorMyPencils()
+-- Check lua/plugins/config/theme.lua for colortheme install/setup
