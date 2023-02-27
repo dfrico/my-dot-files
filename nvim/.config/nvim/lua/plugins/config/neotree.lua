@@ -7,5 +7,8 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
-  }
+  },
+  config = function()
+    vim.keymap.set("n", "<C-n>", vim.cmd.Neotree)
+  end
 }

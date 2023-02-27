@@ -44,5 +44,6 @@ return {
       -- on_close = function()
       -- end,
     }
+    vim.keymap.set("n", "<C-g>", vim.cmd.ZenMode)
   end
 }
