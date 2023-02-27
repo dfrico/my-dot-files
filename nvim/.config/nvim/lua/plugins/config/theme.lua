@@ -1,7 +1,6 @@
 return {
-  "catppuccin/nvim",
-  name = "catppuccin",
+  "nyoom-engineering/oxocarbon.nvim",
   config = function()
-    vim.cmd.colorscheme "catppuccin"
+    require('oxocarbon')
   end
 }
