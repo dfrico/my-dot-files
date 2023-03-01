@@ -20,6 +20,18 @@ return {
       end
     end
 
+    vim.api.nvim_set_keymap('n', 'K', ':lua Show_documentation()<CR>', { noremap = false, silent = false });
+
+    function Show_documentation()
+      local filetype = vim.bo.filetype
+
+      if filetype == 'vim' or filetype == 'help' then
+        vim.api.nvim_command('h ' .. filetype)
+      elseif vim.fn['coc#rpc#ready']() then
+        vim.fn.CocActionAsync('doHover')
+      end
+    end
+
     -- Use tab for trigger completion with characters ahead and navigate.
     -- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
     -- other plugin before putting this into your config.
