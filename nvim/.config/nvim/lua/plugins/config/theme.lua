@@ -1,6 +1,10 @@
 return {
-  "nyoom-engineering/oxocarbon.nvim",
+  "catppuccin/nvim",
+  name = "catppuccin",
   config = function()
-    require('oxocarbon')
+    require("catppuccin").setup({
+      flavour = "mocha",
+    })
+    vim.cmd.colorscheme "catppuccin"
   end
 }
