@@ -177,11 +177,14 @@ alias status="spotify status"
 alias playlist="spotify play list"
 alias playuri="spotify play uri"
 alias vim="nvim"
-alias search="grep -Rw"
+alias search="grep -Rw --exclude-dir=node_modules"
 alias s="search"
 
 # sudo gem install iStats
 alias temp="istats cpu temp"
+
+alias yt-mp4="yt-dlp --format mp4"
+alias yt-mp3="yt-dlp -x --audio-format mp3"
 
 function hideDesktop {
   if [ "$1" = true ] ; then
@@ -231,16 +234,8 @@ fi
 export BUN_INSTALL="/Users/blayhem/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export AWS_CONFIG_FILE=/Users/blayhem/.aws/fatmap-config
-alias fm-mfa-engineering='awsume fatmap-default-engineering -o fatmap-default && awsume -u'
-alias fm-mfa-terraform='awsume fatmap-root-terraform --role-duration 3600'
-
 # asdf
 export PATH="/Users/blayhem/.asdf/shims:$PATH"
-
-alias kcuc-prod='kubectl config set current-context platform-production'
-alias kcuc-dev='kubectl config set current-context platform-development'
-# kcuc-dev
 
 bindkey \^U backward-kill-line
 
