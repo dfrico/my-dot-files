@@ -21,3 +21,5 @@ vim.opt.tabstop = 2 --  when indenting with '>', use 2 spaces width
 vim.opt.termguicolors = true --  enable 24-bit RGB colors
 vim.opt.updatetime = 50
 vim.opt.wrap = false
+
+vim.opt.diffopt:append {'linematch:60'}  -- Improve diff mode, also fix gitsigns
