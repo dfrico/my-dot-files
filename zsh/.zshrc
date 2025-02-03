@@ -1,3 +1,13 @@
+# To enable zsh profiling, uncomment this line and the `zprof` call at the end of the file.
+# zmodload zsh/zprof
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export HOMEBREW_INSTALL_BADGE="✨"
@@ -42,65 +52,28 @@ fif() {
   rg --files-with-matches --no-messages "$1" "${2:-.}" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
 
-# Some ruby trash that has to go on top.
-# export PATH="/usr/local/opt/imagemagick@6/bin:$PATH:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin"
-# eval "$(rbenv init -)"
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-host="MBP"
-ZSH_THEME="spaceship"
-export SPACESHIP_CONFIG="$HOME/.config/spaceship.zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ZSH_DISABLE_COMPFIX=true
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git macos zsh-autosuggestions zsh-syntax-highlighting asdf)
+# Plugins
+zstyle ':omz:plugins:nvm' lazy yes
+plugins=(
+  # conda
+  # conda-env # TBD?
+  nvm
+  git
+  macos
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 
 # User configuration
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$HOME/bin:/Library/TeX/texbin:$HOME/.cargo/bin:$HOME/Library/Python/3.7/bin"
 export PKG_CONFIG_PATH=/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 
-# export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -113,45 +86,10 @@ source $ZSH/oh-my-zsh.sh
     export EDITOR='nvim'
   fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# NVM
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# this goes after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-# add-zsh-hook chpwd load-nvmrc
-# load-nvmrc
-
 # Aliases
-
 alias c='clear'
-alias ls="exa -l --icons"
-alias l="exa -1"
+alias ls="eza -l --git --icons=always $@"
+alias l="eza -1"
 alias lsa="ls -a"
 alias lt="ls --tree"
 alias ..="cd .."
@@ -169,22 +107,20 @@ alias gdr="git push -d origin"
 alias gdel="git branch -d"
 alias gll='_fzf_git_log'
 
+# Utils
 alias public="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias cleanmp3tags="find . -name '*mp3' -print0 | xargs -0 mid3iconv -e UTF-8 -d"
 alias simplehttp="python -m SimpleHTTPServer 8000"
 alias brewit='brew update && brew upgrade && brew cleanup; brew doctor'
-alias status="spotify status"
-alias playlist="spotify play list"
-alias playuri="spotify play uri"
 alias vim="nvim"
-alias search="grep -Rw --exclude-dir=node_modules"
+alias search="grep -Rw --exclude-dir={node_modules,.next,.git,.yarn} --color=always"
 alias s="search"
+alias tree=tree -I 'node_modules|.git|.next|.DS_Store'
+alias yt-mp4="yt-dlp --format mp4"
+alias yt-mp3="yt-dlp -x --audio-format mp3"
 
 # sudo gem install iStats
 alias temp="istats cpu temp"
-
-alias yt-mp4="yt-dlp --format mp4"
-alias yt-mp3="yt-dlp -x --audio-format mp3"
 
 function hideDesktop {
   if [ "$1" = true ] ; then
@@ -197,28 +133,17 @@ function hideDesktop {
   killall Finder
 }
 
-# tiny care terminal
-export TTC_APIKEYS="false"
-export TTC_WEATHER="Madrid"
-export TTC_REPOS="/Users/blayhem/Github, /Users/blayhem/Code/"
-export TTC_REPOS_DEPTH=2
-
 # Jupyter
 export JUPYTER_URL_PATH="http://localhost:8888/"
 alias jd='PWDPATH=`pwd`;open $JUPYTER_URL_PATH"tree${PWDPATH/#$HOME}"'
 
-# Golang
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-
 # autojump
 [[ -f $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# TBD - iTerm integration
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-command -v lolcat >/dev/null 2>&1 && fortune ~/my-dot-files/fortune/ror | lolcat || fortune
+# command -v lolcat >/dev/null 2>&1 && fortune ~/my-dot-files/fortune/ror | lolcat || fortune
 
 if [ -f ~/.zprofile ]; then
   . ~/.zprofile
@@ -226,16 +151,39 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# vim mode
+# bindkey -v
+# bindkey ^R history-incremental-search-backward 
+# bindkey ^S history-incremental-search-forward
+# bindkey \^U backward-kill-line
+# INSERT_MODE_INDICATOR="%F{yellow}+%f"
 
-# bun completions
-[ -s "/Users/blayhem/.bun/_bun" ] && source "/Users/blayhem/.bun/_bun"
+export PATH="/opt/homebrew/bin:$PATH"
 
-# Bun
-export BUN_INSTALL="/Users/blayhem/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-# asdf
-export PATH="/Users/blayhem/.asdf/shims:$PATH"
+#TBD - THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-bindkey \^U backward-kill-line
+# TBD - Conda integration - managed by omz plugin?
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/blayhem/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/blayhem/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/blayhem/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/blayhem/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# zprof
 

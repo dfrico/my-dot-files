@@ -1,1 +1,0 @@
-/Users/blayhem/my-dot-files/vim/.vim/bundle/onedark.vim/colors/onedark.vim

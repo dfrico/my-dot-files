@@ -1,1 +1,0 @@
-/Users/blayhem/my-dot-files/vim/.vim/bundle/gruvbox/colors/gruvbox.vim
