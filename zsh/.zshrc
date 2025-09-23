@@ -1,6 +1,6 @@
 # --------- Optional profiling ---------
-zmodload zsh/zprof
-TIMESTART=$(date +%s%N | cut -b1-13)
+# zmodload zsh/zprof
+# TIMESTART=$(date +%s%N | cut -b1-13)
 
 # ===== Homebrew detection & PATH =====
 if [[ -d /opt/homebrew ]]; then
@@ -182,15 +182,32 @@ conda() {
   conda "$@"
 }
 
+# nvm
 export NVM_DIR="$HOME/.nvm"
 
-# Defer nvm and its completion
-if [[ -s /opt/homebrew/opt/nvm/nvm.sh ]]; then
-  # _defer source /opt/homebrew/opt/nvm/nvm.sh
-fi
-if [[ -s /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm ]]; then
-  # _defer source /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm
-fi
+_nvm_lazy_load() {
+  # prevent recursion
+  unset -f nvm node npm npx corepack pnpm yarn 2>/dev/null
+
+  # source nvm (adjust path if needed)
+  if [[ -s ${HOMEBREW_PREFIX:-/opt/homebrew}/opt/nvm/nvm.sh ]]; then
+    . ${HOMEBREW_PREFIX:-/opt/homebrew}/opt/nvm/nvm.sh
+  elif [[ -s "$NVM_DIR/nvm.sh" ]]; then
+    . "$NVM_DIR/nvm.sh"
+  fi
+
+  # optional: load completion only now (can be slow; skip if you care about latency)
+  # [[ -s ${HOMEBREW_PREFIX:-/opt/homebrew}/opt/nvm/etc/bash_completion.d/nvm ]] && \
+  #   . ${HOMEBREW_PREFIX:-/opt/homebrew}/opt/nvm/etc/bash_completion.d/nvm
+}
+
+nvm()      { _nvm_lazy_load; nvm "$@"; }
+node()     { _nvm_lazy_load; node "$@"; }
+npm()      { _nvm_lazy_load; npm "$@"; }
+npx()      { _nvm_lazy_load; npx "$@"; }
+corepack() { _nvm_lazy_load; corepack "$@"; }
+yarn()     { _nvm_lazy_load; yarn "$@"; }
+pnpm()     { _nvm_lazy_load; pnpm "$@"; }
 
 
 # ========= Optional: on-demand byte-compilation =========
@@ -204,7 +221,7 @@ zrebuild() {
 }
 
 # --------- Optional profiling footer ---------
-TIMEEND=$(date +%s%N | cut -b1-13)
-TIMETOTAL=$((TIMEEND - TIMESTART))
-echo "Shell initialized in ${TIMETOTAL}ms"
-rm -f zsh.log; zprof > zsh.log
+# TIMEEND=$(date +%s%N | cut -b1-13)
+# TIMETOTAL=$((TIMEEND - TIMESTART))
+# echo "Shell initialized in ${TIMETOTAL}ms"
+# rm -f zsh.log; zprof > zsh.log
