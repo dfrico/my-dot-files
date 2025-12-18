@@ -225,3 +225,5 @@ zrebuild() {
 # TIMETOTAL=$((TIMEEND - TIMESTART))
 # echo "Shell initialized in ${TIMETOTAL}ms"
 # rm -f zsh.log; zprof > zsh.log
+
+. "$HOME/.local/bin/env"
