@@ -108,10 +108,38 @@ fif() {
     fzf --preview "highlight -O ansi -l {} 2>/dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
 
-# autojump
-if [[ -r /opt/homebrew/etc/profile.d/autojump.sh ]]; then
-  _defer source /opt/homebrew/etc/profile.d/autojump.sh
-fi
+# autojump now zoxide
+eval "$(zoxide init zsh)"
+
+# Custom 'j' wrapper for zoxide
+j() {
+    # If arguments start with '-' (flags), pass them directly to zoxide (e.g., j -i)
+    if [[ ${1} == -* ]] && [[ ${1} != "--" ]]; then
+        z ${@}
+        return
+    fi
+
+    # Query zoxide for the best match
+    # 'zoxide query' returns the path or exits with an error code if not found
+    local output
+    output=$(zoxide query ${@} 2>/dev/null)
+
+    if [[ -d "${output}" ]]; then
+        # Success: Print path in red (matches your old behavior) and cd
+        if [ -t 1 ]; then
+            echo -e "\033[31m${output}\033[0m"
+        else
+            echo -e "${output}"
+        fi
+        cd "${output}"
+    else
+        # Failure: Custom error message
+        echo "zoxide: directory '${@}' not found"
+        echo "\n${output}\n"
+        echo "Try \`zoxide --help\` for more information."
+        return 1
+    fi
+}
 
 # ========= Editor =========
 if [[ -n $SSH_CONNECTION ]]; then export EDITOR=vim; else export EDITOR=nvim; fi
