@@ -210,6 +210,8 @@ conda() {
   conda "$@"
 }
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 
@@ -253,5 +255,6 @@ zrebuild() {
 # TIMETOTAL=$((TIMEEND - TIMESTART))
 # echo "Shell initialized in ${TIMETOTAL}ms"
 # rm -f zsh.log; zprof > zsh.log
+
 
 . "$HOME/.local/bin/env"
